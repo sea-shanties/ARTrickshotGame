@@ -15,10 +15,13 @@ public class BallThrow : MonoBehaviour
   [SerializeField] float MinSwipeDist = 0;
   private float _ballVelocity = 0;
   private float _ballSpeed = 0;
-  [SerializeField] float MaxBallSpeed = 40;
+  [SerializeField] float MaxBallSpeed = 200;
+  [SerializeField] float Speed_Amplifier = 750f;
+  [SerializeField] float Height_Amplifier = 2f;
+  [SerializeField] float Distance_Amplifier = 2f;
   private Vector3 _angle;
 
-  private bool _thrown = false; 
+  private bool _thrown = false;
   private bool _holding = false;
   private Vector3 _newPosition;
   private Vector3 _ogBallPos;
@@ -49,10 +52,6 @@ public class BallThrow : MonoBehaviour
     {
       HoldBall();
     }
-    else if (!_holding && !_thrown)
-    {
-   
-    }
     else if (_thrown)
     {
       return;
@@ -65,7 +64,30 @@ public class BallThrow : MonoBehaviour
     else
     {
       _holding = false;
-      DefaultBall();
+      _endTime = Time.time;
+      _endPos = _input.TouchCurrentPos;
+      _swipeDist = (_endPos - _startPos).magnitude;
+      _swipeTime = _endTime - _startTime;
+      if (_swipeTime < 0.5f && _swipeDist > 30f)
+      {
+        ApplySpeed();
+        ApplyAngle();
+
+        _ball.GetComponent<Rigidbody>().AddForce(new Vector3((_angle.x * _ballSpeed), (_angle.y * _ballSpeed ), (_angle.z * _ballSpeed)));
+        _ball.GetComponent<Rigidbody>().useGravity = true;
+        _holding = false;
+        _thrown = true;
+        // resets the ball 4 seconds after it's thrown
+        // eventually replace this with hitting the return volume
+        Invoke("DefaultBall", 4f);
+
+
+      }
+      else
+      {
+        DefaultBall();
+      }
+
     }
   }
 
@@ -73,7 +95,7 @@ public class BallThrow : MonoBehaviour
   // function that sets up and is used to respawn a ball after it falls. 
   public void setupBall()
   {
-    GameObject Ball = GameObject.FindGameObjectWithTag("Respawn");
+    GameObject Ball = GameObject.FindGameObjectWithTag("Ball");
     Debug.Log("ball found!");
     Ball = _ball;
     DefaultBall();
@@ -99,12 +121,12 @@ public class BallThrow : MonoBehaviour
 
   private void HoldBall()
   {
-  // tracks where the screen was tapped
+    // tracks where the screen was tapped
     Vector3 _touchPos = _input.TouchCurrentPos;
     _touchPos.z = Camera.main.nearClipPlane * BallDist;
     _newPosition = Camera.main.ScreenToWorldPoint(_touchPos);
 
-    if (_touchPos.x < Screen.width * RightScreenLimit && _touchPos.x > Screen.width * LeftScreenLimit 
+    if (_touchPos.x < Screen.width * RightScreenLimit && _touchPos.x > Screen.width * LeftScreenLimit
     && _touchPos.y < Screen.height * TopScreenLimit && _touchPos.y > Screen.height * BottomScreenLimit)
     {
       _ball.transform.localPosition = Vector3.Lerp(_ball.transform.localPosition, _newPosition, DragSpeed * Time.deltaTime);
@@ -121,13 +143,36 @@ public class BallThrow : MonoBehaviour
     {
       if (_hit.rigidbody.gameObject == _ball)
       {
-       //Debug.Log("Ball Hit!");
+        //Debug.Log("Ball Hit!");
         _startTime = Time.time;
         _startPos = _input.TouchCurrentPos;
-        _holding = true; 
+        _holding = true;
       }
     }
-    
+  }
+
+  private void ApplySpeed()
+  {
+    // the swipe is a small number so we multiply it to increase the magnitude
+    if (_swipeTime > 0)
+    {
+      _ballVelocity = _swipeDist / (_swipeDist / _swipeTime);
+      _ballSpeed = _ballVelocity * Speed_Amplifier;
+      Debug.Log(_ballSpeed);
+
+      if (_ballSpeed >= MaxBallSpeed)
+      {
+        _ballSpeed = MaxBallSpeed;
+      }
+      _swipeTime = 0;
+
+    }
+
+  }
+ private void ApplyAngle()
+  {
+    // ties the direction you swipe in to the height and direction the ball will travel at
+    _angle = Camera.main.ScreenToWorldPoint(new Vector3(_endPos.x, _endPos.y + Height_Amplifier, (Camera.main.nearClipPlane + Distance_Amplifier)));
   }
 
 }
