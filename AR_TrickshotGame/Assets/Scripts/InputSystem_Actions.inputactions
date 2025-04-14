@@ -1,0 +1,56 @@
+{
+    "name": "InputSystem_Actions",
+    "maps": [
+        {
+            "name": "player",
+            "id": "8c474a40-ab95-4b47-b8ad-512a700cb356",
+            "actions": [
+                {
+                    "name": "TouchPoint",
+                    "type": "Button",
+                    "id": "7e669fb1-a535-4a3b-94fb-558b4251323c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Touch",
+                    "id": "8570c233-512d-4d1d-a070-f3a41fd79671",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPoint",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "ba58d451-f6a1-42f3-a999-7d1b642b968a",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "33cccde9-f98d-4f5e-9da7-804dd72783f8",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
