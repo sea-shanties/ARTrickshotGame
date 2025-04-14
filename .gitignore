@@ -1,6 +1,5 @@
 # General
 .DS_Store
-*.dwlt
 
 # Logs
 *.log
@@ -25,6 +24,7 @@
 
 # User Settings
 UserSettings/*
+*.dwlt
 
 # VSCommunity settings
 *.vs/
