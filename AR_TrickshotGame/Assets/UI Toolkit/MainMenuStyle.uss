@@ -1,0 +1,17 @@
+.header {
+    font-size: 139px;
+    color: rgba(255, 255, 255, 255);
+    align-items: stretch;
+    justify-content: flex-start;
+    translate: 0 150px;
+}
+
+.button {
+    font-size: 20px;
+    width: 500px;
+    height: 100px;
+    align-items: stretch;
+    margin-top: 25px;
+    justify-content: flex-end;
+    translate: 0 150px;
+}

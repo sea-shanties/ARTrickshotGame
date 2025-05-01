@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=cfd23aac025e10b41ab0ed6f98fbb708&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement name="Container" style="align-items: center;">
+        <ui:Label text="Main Menu" display-tooltip-when-elided="true" class="header" />
+        <ui:GroupBox style="justify-content: flex-end; margin-bottom: 0; margin-top: 0; transform-origin: bottom; translate: 0 0; flex-direction: column; align-items: center; height: auto;">
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="StartGameButton" class="button" />
+            <ui:Button text="How to Play" display-tooltip-when-elided="true" name="HowToPlayButton" class="button" />
+            <ui:Button text="Sound On/Off" display-tooltip-when-elided="true" name="SoundOnOffButton" class="button" style="-unity-text-align: middle-center;" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="QuitGameButton" class="button" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>
