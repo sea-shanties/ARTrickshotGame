@@ -24,6 +24,7 @@
 
 # User Settings
 UserSettings/*
+*.dwlt
 
 # VSCommunity settings
 *.vs/
