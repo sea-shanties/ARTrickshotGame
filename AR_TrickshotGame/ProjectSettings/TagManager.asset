@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ball
   - Pan
+  - Table
+  - Win
+  - Cup
   layers:
   - Default
   - TransparentFX

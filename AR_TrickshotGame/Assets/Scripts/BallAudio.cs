@@ -8,19 +8,19 @@ public class BallAudio : MonoBehaviour
   [SerializeField] AudioClip PanHit;
   [SerializeField] float PanHitVolume = 1.0f;
   [SerializeField] AudioClip TableHit;
-  [SerializeField] float TableHitVolume = 1.0f;
+  [SerializeField] float TableHitVolume = 0.125f;
   [SerializeField] AudioClip BallInCup;
-  [SerializeField] float BallInCupVolume = 1.0f;
+  [SerializeField] float BallInCupVolume = 0.25f;
   [SerializeField] AudioClip WinSFX;
-  [SerializeField] float WinSFXVolume = 1.0f;
-  [SerializeField] AudioClip WinCheerSFX;
-  [SerializeField] float WinCheerSFXVolume = 1.0f;
+  [SerializeField] float WinSFXVolume = 0.5f;
+  //[SerializeField] AudioClip WinCheerSFX;
+  //[SerializeField] float WinCheerSFXVolume = 1.0f;
 
   // creates the audiosource that plays the clip 
   AudioSource _audioSource; 
   void Start()
   {
-
+   _audioSource= FindObjectOfType<AudioSource>();
   }
 
   // Update is called once per frame
@@ -31,11 +31,22 @@ public class BallAudio : MonoBehaviour
 
   private void OnCollisionEnter(Collision collision)
   {
-    Debug.Log("Collision");
+
     if (collision.gameObject.CompareTag("Pan"))
     {
       _audioSource.PlayOneShot(PanHit, PanHitVolume);
-      Debug.Log("Pan hit");
+    }
+    else if (collision.gameObject.CompareTag("Table"))
+    {
+      _audioSource.PlayOneShot(TableHit, TableHitVolume);
+    }
+    else if (collision.gameObject.CompareTag("Cup"))
+    {
+      _audioSource.PlayOneShot(BallInCup, BallInCupVolume);
+    }
+    else if (collision.gameObject.CompareTag("Win"))
+    {
+      _audioSource.PlayOneShot(WinSFX, WinSFXVolume);
     }
   }
 }
