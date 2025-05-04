@@ -7,6 +7,8 @@ public class BallThrow : MonoBehaviour
   [SerializeField] private InputHandler _input;
   [SerializeField] GameObject _ball;
 
+  public int Tries = 0;
+
   private float _startTime, _endTime, _swipeDist, _swipeTime;
   private Vector2 _endPos;
   private Vector2 _startPos;
@@ -79,13 +81,13 @@ public class BallThrow : MonoBehaviour
         _thrown = true;
         // resets the ball 4 seconds after it's thrown
         // eventually replace this with hitting the return volume
-        Invoke("DefaultBall", 4f);
+        //Invoke("DefaultBall", 4f);
 
 
       }
       else
       {
-        DefaultBall();
+      //  DefaultBall();
       }
 
     }
@@ -102,8 +104,10 @@ public class BallThrow : MonoBehaviour
   }
 
   // sets everything back to default for the new ball
-  private void DefaultBall()
+  public void DefaultBall()
   {
+    Tries++;
+    Debug.Log("Tries: " + Tries);
     _ball.transform.localPosition = _ogBallPos;
     _angle = Vector3.zero;
     _endPos = Vector2.zero;
