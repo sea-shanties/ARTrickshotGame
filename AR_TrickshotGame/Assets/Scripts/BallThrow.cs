@@ -158,7 +158,7 @@ public class BallThrow : MonoBehaviour
     {
       _ballVelocity = _swipeDist / (_swipeDist / _swipeTime);
       _ballSpeed = _ballVelocity * Speed_Amplifier;
-      Debug.Log(_ballSpeed);
+     // Debug.Log(_ballSpeed);
 
       if (_ballSpeed >= MaxBallSpeed)
       {
