@@ -135,7 +135,7 @@ MonoBehaviour:
   BallInCup: {fileID: 0}
   BallInCupVolume: 1
   WinSFX: {fileID: 0}
-  WinCheerSFXVolume: 1
+  WinSFXVolume: 1
 --- !u!82 &-4166456816864101588
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,15 +146,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 3dfb5b125e4682d43bac269df35991ca, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 139
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
