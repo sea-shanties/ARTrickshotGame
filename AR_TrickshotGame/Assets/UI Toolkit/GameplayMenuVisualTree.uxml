@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=ed78bf76b0dd8094fb84fd3fe6ba62bb&amp;type=3#MainMenuStyle" />
-    <ui:VisualElement>
+    <ui:VisualElement style="flex-direction: row;">
         <ui:Button text="Button" display-tooltip-when-elided="true" name="PauseButton" class="button" style="align-items: flex-start; margin-left: 50px; top: auto; margin-top: 50px; width: 160px; height: 160px; background-image: url(&apos;project://database/Assets/Level/UI_PNGS/SmallBack_Button.png?fileID=2800000&amp;guid=46662b63900feb94b909fdf8444c7e5c&amp;type=3#SmallBack_Button&apos;);" />
+        <ui:Label text="00" display-tooltip-when-elided="true" class="header" style="align-items: center; background-color: rgba(236, 227, 123, 0); -unity-background-image-tint-color: rgb(255, 255, 255); color: rgb(0, 0, 0); width: 652px; justify-content: center; left: auto; -unity-text-align: middle-right; margin-left: 0; margin-top: 50px; height: 160px; background-image: url(&apos;project://database/Assets/Level/UI_PNGS/Tries_Counter.png?fileID=2800000&amp;guid=edd3f6e746d64634fa74b76da462e20d&amp;type=3#Tries_Counter&apos;); padding-right: 100px;" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="SoundButton" class="button" style="align-items: flex-end; top: auto; margin-top: 50px; width: 160px; height: 160px; background-image: url(&apos;project://database/Assets/Level/UI_PNGS/SmallSound_Button.png?fileID=2800000&amp;guid=26bcef7f3e9669346aa1a709a369990a&amp;type=3#SmallSound_Button&apos;); margin-right: 50px; margin-left: 0; display: flex;" />
     </ui:VisualElement>
 </ui:UXML>

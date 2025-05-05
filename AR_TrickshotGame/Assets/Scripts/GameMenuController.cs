@@ -12,6 +12,7 @@ public class GameMenuController : MonoBehaviour
     private VisualElement _pauseMenuVisualTree;
 
     private Button _pauseButton;
+    private Button _soundButton;
     private Button _backButton;
     private Button _quitButton;
     private List<Button> _buttons = new List<Button>();
@@ -29,6 +30,9 @@ public class GameMenuController : MonoBehaviour
 
         _pauseButton = root.Q("PauseButton") as Button;
         _pauseButton.RegisterCallback<ClickEvent>(OnPauseButtonClick);
+
+        _soundButton = root.Q("SoundButton") as Button;
+        _soundButton.RegisterCallback<ClickEvent>(OnSoundButtonClick);
 
         _backButton = root.Q("BackButton") as Button;
         _backButton.RegisterCallback<ClickEvent>(OnBackButtonClick);
@@ -53,6 +57,20 @@ public class GameMenuController : MonoBehaviour
 
         _gameplayMenuVisualTree.style.display = DisplayStyle.None;
         _pauseMenuVisualTree.style.display = DisplayStyle.Flex;
+    }
+
+    private void OnSoundButtonClick(ClickEvent evt)
+    {
+        if (_audioSource.isPlaying){
+            _audioSource.Pause();
+            Debug.Log("audio deactivate");
+        }
+        else
+        {
+            _audioSource.Play();
+            Debug.Log("audio activate");
+        }
+        
     }
 
     private void OnBackButtonClick(ClickEvent evt)

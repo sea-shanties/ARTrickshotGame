@@ -9,7 +9,7 @@
 
 .button {
     font-size: 80px;
-    top: 23%;
+    top: 35%;
     width: 700px;
     height: 171px;
     margin-top: 30px;
@@ -21,4 +21,6 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
 }

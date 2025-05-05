@@ -8,8 +8,13 @@ public class MainMenuEvents : MonoBehaviour
 {
     private UIDocument _document;
     private Button _button;
+    private Button _howToPlaybutton;
+    private Button _howToPlayBackbutton;
     private List<Button> _menuButtons = new List<Button>();
     private AudioSource _audioSource;
+
+    private VisualElement _mainMenuVisualTree;
+    private VisualElement _howToPlayVisualTree;
 
     [SerializeField] private string _startLevelName;
 
@@ -17,17 +22,31 @@ public class MainMenuEvents : MonoBehaviour
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _document = GetComponent<UIDocument>();
+        VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
-        _button = _document.rootVisualElement.Q("StartButton") as Button;
+        _audioSource = GetComponent<AudioSource>();
+        //_document = GetComponent<UIDocument>();
+
+        _mainMenuVisualTree = root.Q("MainMenuVisualTree");
+        _howToPlayVisualTree = root.Q("HowToPlayVisualTree");
+
+        _button = root.Q("StartButton") as Button;
         _button.RegisterCallback<ClickEvent>(OnPlayGameClick);
 
-        _menuButtons = _document.rootVisualElement.Query<Button>().ToList();
-        for (int i = 0; i < _menuButtons.Count; i++)
+        _howToPlaybutton = root.Q("HowToPlayButton") as Button;
+        _howToPlaybutton.RegisterCallback<ClickEvent>(OnHowToPlayClick);
+
+        _howToPlayBackbutton = root.Q("HowToPlayBackButton") as Button;
+        _howToPlayBackbutton.RegisterCallback<ClickEvent>(OnHowToPlayBackClick);
+
+        _menuButtons = root.Query<Button>().ToList();
+        foreach(Button button in _menuButtons)
         {
-            _menuButtons[i].RegisterCallback<ClickEvent>(OnAllButtonsClick);
+            button.RegisterCallback<ClickEvent>(OnAllButtonsClick);
         }
+
+        _mainMenuVisualTree.style.display = DisplayStyle.Flex;
+        _howToPlayVisualTree.style.display = DisplayStyle.None;
     }
 
     //private void OnEnable()
@@ -39,10 +58,12 @@ public class MainMenuEvents : MonoBehaviour
     {
         //_input.TouchStarted -= OnTouchStarted;
         _button.UnregisterCallback<ClickEvent>(OnPlayGameClick);
+        _howToPlaybutton.UnregisterCallback<ClickEvent>(OnHowToPlayClick);
+        _howToPlayBackbutton.UnregisterCallback<ClickEvent>(OnHowToPlayBackClick);
 
-        for (int i = 0; i < _menuButtons.Count; i++)
+        foreach(Button button in _menuButtons)
         {
-            _menuButtons[i].UnregisterCallback<ClickEvent>(OnAllButtonsClick);
+            button.UnregisterCallback<ClickEvent>(OnAllButtonsClick);
         }
     }
 
@@ -55,6 +76,20 @@ public class MainMenuEvents : MonoBehaviour
     {
         // Debug.Log("Start button pressed");
         SceneManager.LoadScene(_startLevelName);
+    }
+
+    private void OnHowToPlayClick(ClickEvent evt)
+    {
+        Debug.Log("how to play");
+        _howToPlayVisualTree.style.display = DisplayStyle.Flex;
+        _mainMenuVisualTree.style.display = DisplayStyle.None;
+    }
+
+    private void OnHowToPlayBackClick(ClickEvent evt)
+    {
+        Debug.Log("back to main menu");
+        _mainMenuVisualTree.style.display = DisplayStyle.Flex;
+        _howToPlayVisualTree.style.display = DisplayStyle.None;
     }
 
     private void OnAllButtonsClick(ClickEvent evt)
