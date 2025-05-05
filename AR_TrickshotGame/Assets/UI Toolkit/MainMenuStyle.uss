@@ -1,0 +1,19 @@
+.header {
+    font-size: 100px;
+    -unity-text-align: upper-center;
+    -unity-font-style: bold;
+    background-image: url('project://database/Assets/Level/UI_PNGS/MainMenu_Button.png?fileID=2800000&guid=a134025a88679cc4d8b50cae31ad4e13&type=3#MainMenu_Button');
+    width: 751px;
+    height: 184px;
+}
+
+.button {
+    font-size: 80px;
+    top: 23%;
+    width: 700px;
+    height: 171px;
+    margin-top: 30px;
+    max-width: none;
+    max-height: none;
+    color: rgba(210, 210, 210, 0);
+}
