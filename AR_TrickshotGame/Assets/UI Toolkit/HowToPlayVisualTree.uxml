@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=ed78bf76b0dd8094fb84fd3fe6ba62bb&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement>
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="HowToPlayLabel" class="button" style="background-image: url(&apos;project://database/Assets/Level/UI_PNGS/HowtoPlay_Button.png?fileID=2800000&amp;guid=795db856ca032ec4c825f46e941428a8&amp;type=3#HowtoPlay_Button&apos;); top: 5%;" />
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="HowToPlayInstructions" class="button" style="background-image: url(&apos;project://database/Assets/Level/UI_PNGS/HowToPlay_Panel.png?fileID=2800000&amp;guid=718f28cc44207254ba7a5bbda30ecbc2&amp;type=3#HowToPlay_Panel&apos;); height: 1271px; top: 5%; width: 850px;" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="HowToPlayBackButton" class="button" style="top: 5%; background-image: url(&apos;project://database/Assets/Level/UI_PNGS/Back_Button.png?fileID=2800000&amp;guid=b63690fb79df21841b4c2931a4b4a90c&amp;type=3#Back_Button&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>
