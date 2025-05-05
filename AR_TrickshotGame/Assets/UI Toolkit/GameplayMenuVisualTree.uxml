@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=ed78bf76b0dd8094fb84fd3fe6ba62bb&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement>
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="PauseButton" class="button" style="align-items: flex-start; margin-left: 50px; top: auto; margin-top: 50px; width: 160px; height: 160px; background-image: url(&apos;project://database/Assets/Level/UI_PNGS/SmallBack_Button.png?fileID=2800000&amp;guid=46662b63900feb94b909fdf8444c7e5c&amp;type=3#SmallBack_Button&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>
