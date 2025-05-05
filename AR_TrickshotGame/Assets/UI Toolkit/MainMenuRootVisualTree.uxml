@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="MainMenuVisualTree" src="project://database/Assets/UI%20Toolkit/MainMenuVisualTree.uxml?fileID=9197481963319205126&amp;guid=efa423a7c7d636445865e58678f53da3&amp;type=3#MainMenuVisualTree" />
+    <ui:Template name="HowToPlayVisualTree" src="project://database/Assets/UI%20Toolkit/HowToPlayVisualTree.uxml?fileID=9197481963319205126&amp;guid=3b2e141f9503fbf47aa09e094930c124&amp;type=3#HowToPlayVisualTree" />
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=ed78bf76b0dd8094fb84fd3fe6ba62bb&amp;type=3#MainMenuStyle" />
+    <ui:Instance template="MainMenuVisualTree" name="MainMenuVisualTree" style="display: none; flex-grow: 1;" />
+    <ui:Instance template="HowToPlayVisualTree" name="HowToPlayVisualTree" style="display: none; flex-grow: 1;" />
+</ui:UXML>
