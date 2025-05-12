@@ -10,6 +10,8 @@ public class MainMenuEvents : MonoBehaviour
     private Button _button;
     private Button _howToPlaybutton;
     private Button _howToPlayBackbutton;
+    private Toggle _soundToggle;
+    private Button _quitButton;
     private List<Button> _menuButtons = new List<Button>();
     private AudioSource _audioSource;
 
@@ -39,6 +41,12 @@ public class MainMenuEvents : MonoBehaviour
         _howToPlayBackbutton = root.Q("HowToPlayBackButton") as Button;
         _howToPlayBackbutton.RegisterCallback<ClickEvent>(OnHowToPlayBackClick);
 
+        _soundToggle = root.Q("SoundToggle") as Toggle;
+        _soundToggle.RegisterCallback<ClickEvent>(OnSoundToggleClick);
+
+        _quitButton = root.Q("QuitButton") as Button;
+        _quitButton.RegisterCallback<ClickEvent>(OnQuitButtonClick);
+
         _menuButtons = root.Query<Button>().ToList();
         foreach(Button button in _menuButtons)
         {
@@ -49,19 +57,27 @@ public class MainMenuEvents : MonoBehaviour
         _howToPlayVisualTree.style.display = DisplayStyle.None;
     }
 
-    //private void OnEnable()
-    //{
-    //    _input.TouchStarted += OnTouchStarted;
-    //}
+    public void MuteToggle(bool muted)
+    {
+        if (muted)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
+    }
 
     private void OnDisable()
     {
-        //_input.TouchStarted -= OnTouchStarted;
         _button.UnregisterCallback<ClickEvent>(OnPlayGameClick);
         _howToPlaybutton.UnregisterCallback<ClickEvent>(OnHowToPlayClick);
         _howToPlayBackbutton.UnregisterCallback<ClickEvent>(OnHowToPlayBackClick);
+        _soundToggle.UnregisterCallback<ClickEvent>(OnSoundToggleClick);
+        _quitButton.UnregisterCallback<ClickEvent>(OnQuitButtonClick);
 
-        foreach(Button button in _menuButtons)
+        foreach (Button button in _menuButtons)
         {
             button.UnregisterCallback<ClickEvent>(OnAllButtonsClick);
         }
@@ -90,6 +106,16 @@ public class MainMenuEvents : MonoBehaviour
         Debug.Log("back to main menu");
         _mainMenuVisualTree.style.display = DisplayStyle.Flex;
         _howToPlayVisualTree.style.display = DisplayStyle.None;
+    }
+
+    private void OnSoundToggleClick(ClickEvent evt)
+    {
+        MuteToggle(_soundToggle.value);
+    }
+
+    private void OnQuitButtonClick(ClickEvent evt)
+    {
+        Application.Quit();
     }
 
     private void OnAllButtonsClick(ClickEvent evt)

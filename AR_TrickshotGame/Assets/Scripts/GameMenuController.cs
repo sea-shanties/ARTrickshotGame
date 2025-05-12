@@ -14,6 +14,7 @@ public class GameMenuController : MonoBehaviour
     private Button _pauseButton;
     private Button _soundButton;
     private Button _backButton;
+    private Toggle _soundToggle;
     private Button _quitButton;
     private List<Button> _buttons = new List<Button>();
 
@@ -31,8 +32,8 @@ public class GameMenuController : MonoBehaviour
         _pauseButton = root.Q("PauseButton") as Button;
         _pauseButton.RegisterCallback<ClickEvent>(OnPauseButtonClick);
 
-        _soundButton = root.Q("SoundButton") as Button;
-        _soundButton.RegisterCallback<ClickEvent>(OnSoundButtonClick);
+        _soundToggle = root.Q("SoundToggle") as Toggle;
+        _soundToggle.RegisterCallback<ClickEvent>(OnSoundToggleClick);
 
         _backButton = root.Q("BackButton") as Button;
         _backButton.RegisterCallback<ClickEvent>(OnBackButtonClick);
@@ -51,6 +52,18 @@ public class GameMenuController : MonoBehaviour
         _pauseMenuVisualTree.style.display = DisplayStyle.None;
     }
 
+    public void MuteToggle(bool muted)
+    {
+        if (muted)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
+    }
+
     private void OnPauseButtonClick(ClickEvent evt)
     {
         Debug.Log("Activate pause menu");
@@ -59,26 +72,17 @@ public class GameMenuController : MonoBehaviour
         _pauseMenuVisualTree.style.display = DisplayStyle.Flex;
     }
 
-    private void OnSoundButtonClick(ClickEvent evt)
-    {
-        if (_audioSource.isPlaying){
-            _audioSource.Pause();
-            Debug.Log("audio deactivate");
-        }
-        else
-        {
-            _audioSource.Play();
-            Debug.Log("audio activate");
-        }
-        
-    }
-
     private void OnBackButtonClick(ClickEvent evt)
     {
         Debug.Log("Close pause menu");
 
         _pauseMenuVisualTree.style.display = DisplayStyle.None;
         _gameplayMenuVisualTree.style.display = DisplayStyle.Flex;
+    }
+
+    private void OnSoundToggleClick(ClickEvent evt)
+    {
+        MuteToggle(_soundToggle.value);
     }
 
     private void OnQuitButtonClick(ClickEvent evt)
@@ -96,6 +100,7 @@ public class GameMenuController : MonoBehaviour
     private void OnDisable()
     {
         _pauseButton.UnregisterCallback<ClickEvent>(OnPauseButtonClick);
+        _soundToggle.UnregisterCallback<ClickEvent>(OnSoundToggleClick);
         _backButton.UnregisterCallback<ClickEvent>(OnBackButtonClick);
         _quitButton.UnregisterCallback<ClickEvent>(OnQuitButtonClick);
         foreach(Button button in _buttons)
