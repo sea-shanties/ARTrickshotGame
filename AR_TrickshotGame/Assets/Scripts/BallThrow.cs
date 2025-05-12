@@ -29,6 +29,7 @@ public class BallThrow : MonoBehaviour
   private Vector3 _ogBallPos;
 
   [SerializeField] float BallDist = 5;
+  [SerializeField] float Reach = 20; 
   [SerializeField] float DragSpeed = 80;
 
   // just for testing purposes
@@ -36,6 +37,7 @@ public class BallThrow : MonoBehaviour
   [SerializeField] float LeftScreenLimit = 0.09f;
   [SerializeField] float TopScreenLimit = 0.925f;
   [SerializeField] float BottomScreenLimit = 0.04f;
+  bool BallTime = false;
 
 
   // Start is called before the first frame update
@@ -43,7 +45,12 @@ public class BallThrow : MonoBehaviour
   {
     //setupBall();
     _ogBallPos = _ball.transform.localPosition;
-    DefaultBall();
+    
+    /*
+    _ball.GetComponent<MeshRenderer>().enabled = false;
+    _ball.GetComponent<Collider>().enabled = false;
+    _ball.GetComponent<Rigidbody>().isKinematic = true;
+    */
   }
 
   // Update is called once per frame
@@ -59,7 +66,7 @@ public class BallThrow : MonoBehaviour
       return;
     }
 
-    if (_input.TouchHeld)
+    if (_input.TouchHeld && BallTime == true)
     {
       FindBall();
     }
@@ -81,13 +88,13 @@ public class BallThrow : MonoBehaviour
         _thrown = true;
         // resets the ball 4 seconds after it's thrown
         // eventually replace this with hitting the return volume
-        //Invoke("DefaultBall", 4f);
+        Invoke("DefaultBall", 4f);
 
 
       }
       else
       {
-      //  DefaultBall();
+        //DefaultBall();
       }
 
     }
@@ -106,6 +113,10 @@ public class BallThrow : MonoBehaviour
   // sets everything back to default for the new ball
   public void DefaultBall()
   {
+    _ball.GetComponent<MeshRenderer>().enabled = true;
+    _ball.GetComponent<Collider>().enabled = true;
+    _ball.GetComponent<Rigidbody>().isKinematic = false;
+    BallTime = true; 
     Tries++;
     Debug.Log("Tries: " + Tries);
     _ball.transform.localPosition = _ogBallPos;
@@ -143,7 +154,7 @@ public class BallThrow : MonoBehaviour
   {
     Ray _ballRay = Camera.main.ScreenPointToRay(_input.TouchCurrentPos);
     RaycastHit _hit;
-    if (Physics.Raycast(_ballRay, out _hit, BallDist))
+    if (Physics.Raycast(_ballRay, out _hit, Reach))
     {
       if (_hit.rigidbody.gameObject == _ball)
       {
