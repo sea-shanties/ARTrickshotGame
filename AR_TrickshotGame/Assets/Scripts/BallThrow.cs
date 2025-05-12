@@ -45,12 +45,13 @@ public class BallThrow : MonoBehaviour
   {
     //setupBall();
     _ogBallPos = _ball.transform.localPosition;
+
     
-    /*
     _ball.GetComponent<MeshRenderer>().enabled = false;
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
-    */
+    
+    // DefaultBall();
   }
 
   // Update is called once per frame
@@ -72,6 +73,7 @@ public class BallThrow : MonoBehaviour
     }
     else
     {
+      Invoke("DefaultBall", 4f);
       _holding = false;
       _endTime = Time.time;
       _endPos = _input.TouchCurrentPos;
@@ -79,6 +81,7 @@ public class BallThrow : MonoBehaviour
       _swipeTime = _endTime - _startTime;
       if (_swipeTime < 0.5f && _swipeDist > 30f)
       {
+       _ball.GetComponent<Rigidbody>().isKinematic= false;
         ApplySpeed();
         ApplyAngle();
 
@@ -88,7 +91,7 @@ public class BallThrow : MonoBehaviour
         _thrown = true;
         // resets the ball 4 seconds after it's thrown
         // eventually replace this with hitting the return volume
-        Invoke("DefaultBall", 4f);
+        //Invoke("DefaultBall", 4f);
 
 
       }
@@ -115,7 +118,7 @@ public class BallThrow : MonoBehaviour
   {
     _ball.GetComponent<MeshRenderer>().enabled = true;
     _ball.GetComponent<Collider>().enabled = true;
-    _ball.GetComponent<Rigidbody>().isKinematic = false;
+    _ball.GetComponent<Rigidbody>().isKinematic = true;
     BallTime = true; 
     Tries++;
     Debug.Log("Tries: " + Tries);

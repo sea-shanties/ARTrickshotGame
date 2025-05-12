@@ -5,7 +5,8 @@ using UnityEngine;
 public class RespawnBall : MonoBehaviour
 {
   GameObject _inputManager;
-  
+  [SerializeField] float RespawnDelay = 2.0f;
+
   void Start()
   {
     _inputManager = GameObject.Find("InputManager");
@@ -22,7 +23,7 @@ public class RespawnBall : MonoBehaviour
     
     if (other.CompareTag("Ball"))
     {
-      _inputManager.GetComponent<BallThrow>().DefaultBall();
+      _inputManager.GetComponent<BallThrow>().Invoke("DefaultBall", RespawnDelay);
     }
     else
     {
