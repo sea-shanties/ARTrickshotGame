@@ -46,10 +46,11 @@ public class BallThrow : MonoBehaviour
     //setupBall();
     _ogBallPos = _ball.transform.localPosition;
     
+    /*
     _ball.GetComponent<MeshRenderer>().enabled = false;
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
-    //DefaultBall();
+    */
   }
 
   // Update is called once per frame
