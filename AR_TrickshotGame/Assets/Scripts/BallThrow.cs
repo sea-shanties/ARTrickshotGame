@@ -58,7 +58,6 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<MeshRenderer>().enabled = false;
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
-<<<<<<< HEAD
 
     VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -68,9 +67,6 @@ public class BallThrow : MonoBehaviour
 
         // DefaultBall();
     }
-=======
-   
-    // DefaultBall();
   }
 >>>>>>> parent of 4796262 (unbroke it again)
 
@@ -220,7 +216,6 @@ public class BallThrow : MonoBehaviour
     _angle = Camera.main.ScreenToWorldPoint(new Vector3(_endPos.x, _endPos.y + Height_Amplifier, (Camera.main.nearClipPlane + Distance_Amplifier)));
   }
 
-<<<<<<< HEAD
   public void WinGame()
   {
     _gameWon = true;
@@ -252,6 +247,4 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
     _ball.GetComponent<Rigidbody>().useGravity = false;
   }
-=======
->>>>>>> parent of 4796262 (unbroke it again)
 }
