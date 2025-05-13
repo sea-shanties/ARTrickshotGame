@@ -29,12 +29,11 @@ public class BallThrow : MonoBehaviour
 
   private bool _thrown = false;
   private bool _holding = false;
-  private float _timeSinceThrown;
   private Vector3 _newPosition;
   private Vector3 _ogBallPos;
 
   [SerializeField] float BallDist = 5;
-  [SerializeField] float Reach = 20;
+  [SerializeField] float Reach = 20; 
   [SerializeField] float DragSpeed = 80;
 
   // just for testing purposes
@@ -44,7 +43,7 @@ public class BallThrow : MonoBehaviour
   private float BottomScreenLimit = 0.04f;
   bool BallTime = false;
   [SerializeField] Text DebugText;
-  private string _debugMessage;
+  private string _debugMessage; 
 
   private bool _gameWon = false;
   private VisualElement _gameMenuVisualTree;
@@ -55,10 +54,11 @@ public class BallThrow : MonoBehaviour
   {
     //setupBall();
     _ogBallPos = _ball.transform.localPosition;
-
+   
     _ball.GetComponent<MeshRenderer>().enabled = false;
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
+<<<<<<< HEAD
 
     VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
@@ -68,6 +68,11 @@ public class BallThrow : MonoBehaviour
 
         // DefaultBall();
     }
+=======
+   
+    // DefaultBall();
+  }
+>>>>>>> parent of 4796262 (unbroke it again)
 
   // Update is called once per frame
   void Update()
@@ -81,14 +86,8 @@ public class BallThrow : MonoBehaviour
     }
     else if (_thrown)
     {
-      
-
-      if (_timeSinceThrown - Time.time >= 5)
-      {
-       resetBall();
-      }
+      return;
     }
-
 
     if (_input.TouchHeld && BallTime == true)
     {
@@ -98,27 +97,28 @@ public class BallThrow : MonoBehaviour
     {
       _holding = false;
       _endTime = Time.time;
-      _timeSinceThrown = Time.time;
       _endPos = _input.TouchCurrentPos;
       _swipeDist = (_endPos - _startPos).magnitude;
       _swipeTime = _endTime - _startTime;
       if (_swipeTime < MaxSwipeTime && _swipeDist > MinSwipeDist)
       {
-
-        _ball.GetComponent<Rigidbody>().isKinematic = false;
+       _ball.GetComponent<Rigidbody>().isKinematic= false;
         ApplySpeed();
         ApplyAngle();
 
-        _ball.GetComponent<Rigidbody>().AddForce(new Vector3((_angle.x * _ballSpeed), (_angle.y * _ballSpeed), (_angle.z * _ballSpeed)));
+        _ball.GetComponent<Rigidbody>().AddForce(new Vector3((_angle.x * _ballSpeed), (_angle.y * _ballSpeed ), (_angle.z * _ballSpeed)));
         _ball.GetComponent<Rigidbody>().useGravity = true;
         _holding = false;
         _thrown = true;
-        
         // resets the ball 4 seconds after it's thrown
         // eventually replace this with hitting the return volume
-        //Invoke("DefaultBall", 4f);
+        Invoke("DefaultBall", 4f);
 
 
+      }
+      else
+      {
+       // DefaultBall();
       }
 
     }
@@ -140,13 +140,12 @@ public class BallThrow : MonoBehaviour
     if (_gameWon)
       return;
     _debugMessage = "Tries: " + Tries;
-    Tries++;
     DebugText.text = _debugMessage;
     _ball.GetComponent<MeshRenderer>().enabled = true;
     _ball.GetComponent<Collider>().enabled = true;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
-    BallTime = true;
-    //Tries++;
+    BallTime = true; 
+    Tries++;
     //Debug.Log("Tries: " + Tries);
     _ball.transform.localPosition = _ogBallPos;
     _angle = Vector3.zero;
@@ -176,8 +175,8 @@ public class BallThrow : MonoBehaviour
     {
       _ball.transform.localPosition = Vector3.Lerp(_ball.transform.localPosition, _newPosition, DragSpeed * Time.deltaTime);
     }
-    // Debug.Log("Touch Pos: " +_input.TouchCurrentPos);
-    // Debug.Log("ball Pos: " + _ball.transform.localPosition);
+   // Debug.Log("Touch Pos: " +_input.TouchCurrentPos);
+   // Debug.Log("ball Pos: " + _ball.transform.localPosition);
 
   }
 
@@ -204,7 +203,7 @@ public class BallThrow : MonoBehaviour
     {
       _ballVelocity = _swipeDist / (_swipeDist / _swipeTime);
       _ballSpeed = _ballVelocity * Speed_Amplifier;
-      // Debug.Log(_ballSpeed);
+     // Debug.Log(_ballSpeed);
 
       if (_ballSpeed >= MaxBallSpeed)
       {
@@ -215,12 +214,13 @@ public class BallThrow : MonoBehaviour
     }
 
   }
-  private void ApplyAngle()
+ private void ApplyAngle()
   {
     // ties the direction you swipe in to the height and direction the ball will travel at
     _angle = Camera.main.ScreenToWorldPoint(new Vector3(_endPos.x, _endPos.y + Height_Amplifier, (Camera.main.nearClipPlane + Distance_Amplifier)));
   }
 
+<<<<<<< HEAD
   public void WinGame()
   {
     _gameWon = true;
@@ -252,4 +252,6 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
     _ball.GetComponent<Rigidbody>().useGravity = false;
   }
+=======
+>>>>>>> parent of 4796262 (unbroke it again)
 }

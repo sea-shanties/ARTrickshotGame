@@ -30475,32 +30475,30 @@ struct BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776  : public MonoBehavio
 	bool ____thrown_22;
 	// System.Boolean BallThrow::_holding
 	bool ____holding_23;
-	// System.Single BallThrow::_timeSinceThrown
-	float ____timeSinceThrown_24;
 	// UnityEngine.Vector3 BallThrow::_newPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_24;
 	// UnityEngine.Vector3 BallThrow::_ogBallPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_26;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_25;
 	// System.Single BallThrow::BallDist
-	float ___BallDist_27;
+	float ___BallDist_26;
 	// System.Single BallThrow::Reach
-	float ___Reach_28;
+	float ___Reach_27;
 	// System.Single BallThrow::DragSpeed
-	float ___DragSpeed_29;
+	float ___DragSpeed_28;
 	// System.Single BallThrow::RightScreenLimit
-	float ___RightScreenLimit_30;
+	float ___RightScreenLimit_29;
 	// System.Single BallThrow::LeftScreenLimit
-	float ___LeftScreenLimit_31;
+	float ___LeftScreenLimit_30;
 	// System.Single BallThrow::TopScreenLimit
-	float ___TopScreenLimit_32;
+	float ___TopScreenLimit_31;
 	// System.Single BallThrow::BottomScreenLimit
-	float ___BottomScreenLimit_33;
+	float ___BottomScreenLimit_32;
 	// System.Boolean BallThrow::BallTime
-	bool ___BallTime_34;
+	bool ___BallTime_33;
 	// UnityEngine.UI.Text BallThrow::DebugText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_35;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_34;
 	// System.String BallThrow::_debugMessage
-	String_t* ____debugMessage_36;
+	String_t* ____debugMessage_35;
 };
 
 // UnityEngine.Experimental.XR.Interaction.BasePoseProvider

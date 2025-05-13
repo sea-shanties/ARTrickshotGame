@@ -21747,32 +21747,30 @@ struct BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776  : public MonoBehavio
 	bool ____thrown_22;
 	// System.Boolean BallThrow::_holding
 	bool ____holding_23;
-	// System.Single BallThrow::_timeSinceThrown
-	float ____timeSinceThrown_24;
 	// UnityEngine.Vector3 BallThrow::_newPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_24;
 	// UnityEngine.Vector3 BallThrow::_ogBallPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_26;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_25;
 	// System.Single BallThrow::BallDist
-	float ___BallDist_27;
+	float ___BallDist_26;
 	// System.Single BallThrow::Reach
-	float ___Reach_28;
+	float ___Reach_27;
 	// System.Single BallThrow::DragSpeed
-	float ___DragSpeed_29;
+	float ___DragSpeed_28;
 	// System.Single BallThrow::RightScreenLimit
-	float ___RightScreenLimit_30;
+	float ___RightScreenLimit_29;
 	// System.Single BallThrow::LeftScreenLimit
-	float ___LeftScreenLimit_31;
+	float ___LeftScreenLimit_30;
 	// System.Single BallThrow::TopScreenLimit
-	float ___TopScreenLimit_32;
+	float ___TopScreenLimit_31;
 	// System.Single BallThrow::BottomScreenLimit
-	float ___BottomScreenLimit_33;
+	float ___BottomScreenLimit_32;
 	// System.Boolean BallThrow::BallTime
-	bool ___BallTime_34;
+	bool ___BallTime_33;
 	// UnityEngine.UI.Text BallThrow::DebugText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_35;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_34;
 	// System.String BallThrow::_debugMessage
-	String_t* ____debugMessage_36;
+	String_t* ____debugMessage_35;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -25491,9 +25489,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7029[8] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7031[9] = 
 {
 	static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___PanHit_4)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___PanHitVolume_5)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___TableHit_6)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___TableHitVolume_7)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___BallInCup_8)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___BallInCupVolume_9)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___WinSFX_10)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ___WinSFXVolume_11)),static_cast<int32_t>(offsetof(BallAudio_t16EE678637D04297836FCD80FB31D0F61CEAB7EE, ____audioSource_12)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7032[33] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7032[32] = 
 {
-	static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____input_4)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ball_5)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Tries_6)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____startTime_7)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____endTime_8)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____swipeDist_9)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____swipeTime_10)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____endPos_11)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____startPos_12)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MinSwipeDist_13)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MaxSwipeTime_14)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ballVelocity_15)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ballSpeed_16)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MaxBallSpeed_17)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Speed_Amplifier_18)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Height_Amplifier_19)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Distance_Amplifier_20)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____angle_21)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____thrown_22)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____holding_23)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____timeSinceThrown_24)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____newPosition_25)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ogBallPos_26)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BallDist_27)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Reach_28)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___DragSpeed_29)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___RightScreenLimit_30)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___LeftScreenLimit_31)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___TopScreenLimit_32)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BottomScreenLimit_33)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BallTime_34)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___DebugText_35)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____debugMessage_36)),};
+	static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____input_4)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ball_5)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Tries_6)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____startTime_7)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____endTime_8)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____swipeDist_9)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____swipeTime_10)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____endPos_11)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____startPos_12)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MinSwipeDist_13)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MaxSwipeTime_14)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ballVelocity_15)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ballSpeed_16)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___MaxBallSpeed_17)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Speed_Amplifier_18)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Height_Amplifier_19)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Distance_Amplifier_20)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____angle_21)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____thrown_22)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____holding_23)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____newPosition_24)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____ogBallPos_25)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BallDist_26)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___Reach_27)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___DragSpeed_28)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___RightScreenLimit_29)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___LeftScreenLimit_30)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___TopScreenLimit_31)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BottomScreenLimit_32)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___BallTime_33)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ___DebugText_34)),static_cast<int32_t>(offsetof(BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776, ____debugMessage_35)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7033[9] = 
 {
 	static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____audioSource_4)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____gameplayMenuVisualTree_5)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____pauseMenuVisualTree_6)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____pauseButton_7)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____soundButton_8)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____backButton_9)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____soundToggle_10)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____quitButton_11)),static_cast<int32_t>(offsetof(GameMenuController_t0E6A598BAF61FF78D63A529DE3B469A13F9621E8, ____buttons_12)),};
