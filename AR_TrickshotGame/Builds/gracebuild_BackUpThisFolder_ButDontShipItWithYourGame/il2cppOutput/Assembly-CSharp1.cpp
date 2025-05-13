@@ -2220,34 +2220,36 @@ struct BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776  : public MonoBehavio
 	bool ____thrown_22;
 	// System.Boolean BallThrow::_holding
 	bool ____holding_23;
+	// System.Single BallThrow::_timeSinceThrown
+	float ____timeSinceThrown_24;
 	// UnityEngine.Vector3 BallThrow::_newPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_24;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_25;
 	// UnityEngine.Vector3 BallThrow::_ogBallPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_26;
 	// System.Single BallThrow::BallDist
-	float ___BallDist_26;
+	float ___BallDist_27;
 	// System.Single BallThrow::Reach
-	float ___Reach_27;
+	float ___Reach_28;
 	// System.Single BallThrow::DragSpeed
-	float ___DragSpeed_28;
+	float ___DragSpeed_29;
 	// System.Single BallThrow::RightScreenLimit
-	float ___RightScreenLimit_29;
+	float ___RightScreenLimit_30;
 	// System.Single BallThrow::LeftScreenLimit
-	float ___LeftScreenLimit_30;
+	float ___LeftScreenLimit_31;
 	// System.Single BallThrow::TopScreenLimit
-	float ___TopScreenLimit_31;
+	float ___TopScreenLimit_32;
 	// System.Single BallThrow::BottomScreenLimit
-	float ___BottomScreenLimit_32;
+	float ___BottomScreenLimit_33;
 	// System.Boolean BallThrow::BallTime
-	bool ___BallTime_33;
+	bool ___BallTime_34;
 	// UnityEngine.UI.Text BallThrow::DebugText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_34;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_35;
 	// System.String BallThrow::_debugMessage
-	String_t* ____debugMessage_35;
+	String_t* ____debugMessage_36;
 	// System.Boolean BallThrow::_gameWon
-	bool ____gameWon_36;
+	bool ____gameWon_37;
 	// UnityEngine.UIElements.VisualElement BallThrow::_gameMenuVisualTree
-	VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* ____gameMenuVisualTree_37;
+	VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* ____gameMenuVisualTree_38;
 };
 
 // UnityEngine.UIElements.BaseBoolField
@@ -2626,12 +2628,14 @@ inline StyleEnum_1_t3B02FFF55849C9C8E6A7C0AA9C7E5F65F10C9C69 StyleEnum_1_op_Impl
 }
 // System.Void BallThrow::HoldBall()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7E62768833C778F5684EB (BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* __this, const RuntimeMethod* method) ;
+// System.Single UnityEngine.Time::get_time()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3 (const RuntimeMethod* method) ;
+// System.Void BallThrow::resetBall()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_resetBall_m2B8D40065B635DA1624251559A0DA9796BEC0707 (BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* __this, const RuntimeMethod* method) ;
 // System.Boolean InputHandler::get_TouchHeld()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool InputHandler_get_TouchHeld_mF08250C2F2CF251889B4B09767DF0907B22E70F3_inline (InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* __this, const RuntimeMethod* method) ;
 // System.Void BallThrow::FindBall()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_FindBall_mD4FC5896F69FEE5D71AED08BC2EE4CA2B106F7C0 (BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* __this, const RuntimeMethod* method) ;
-// System.Single UnityEngine.Time::get_time()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3 (const RuntimeMethod* method) ;
 // UnityEngine.Vector2 InputHandler::get_TouchCurrentPos()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 InputHandler_get_TouchCurrentPos_mBCDBA6316CCC98F3EE11883DB1CFB6D5A4D1340A_inline (InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* __this, const RuntimeMethod* method) ;
 // UnityEngine.Vector2 UnityEngine.Vector2::op_Subtraction(UnityEngine.Vector2,UnityEngine.Vector2)
@@ -2648,8 +2652,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999E
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_AddForce_m7A3EEEED21F986917107CBA6CC0106DCBC212198 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___force0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Rigidbody::set_useGravity(System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.MonoBehaviour::Invoke(System.String,System.Single)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, String_t* ___methodName0, float ___time1, const RuntimeMethod* method) ;
 // UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* GameObject_FindGameObjectWithTag_m17078A0823CA9699710251C617B95D04D57098A9 (String_t* ___tag0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Debug::Log(System.Object)
@@ -2882,6 +2884,8 @@ inline BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* GameObject_GetCompon
 {
 	return ((  BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
 }
+// System.Void UnityEngine.MonoBehaviour::Invoke(System.String,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, String_t* ___methodName0, float ___time1, const RuntimeMethod* method) ;
 // T UnityEngine.Object::FindObjectOfType<BallThrow>()
 inline BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* Object_FindObjectOfType_TisBallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776_mB6BD08D2C479E777FC8668B34F8D77C5193E25BD (const RuntimeMethod* method)
 {
@@ -3108,7 +3112,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_Start_m17EF2C27CF43AA94A511A3E
 		NullCheck(L_1);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2;
 		L_2 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_1, NULL);
-		__this->____ogBallPos_25 = L_2;
+		__this->____ogBallPos_26 = L_2;
 		// _ball.GetComponent<MeshRenderer>().enabled = false;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = __this->____ball_5;
 		NullCheck(L_3);
@@ -3142,10 +3146,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_Start_m17EF2C27CF43AA94A511A3E
 		il2cpp_codegen_runtime_class_init_inline(UQueryExtensions_t1271382882DF1B8FEEDE5EFA510405ABA7BD3426_il2cpp_TypeInfo_var);
 		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_12;
 		L_12 = UQueryExtensions_Q_TisVisualElement_t2667F9D19E62C7A315927506C06F223AB9234115_m3BB51290583E624E529EC4115BEA56173DC48394(L_11, _stringLiteral35F2EE5DE0C7761EF95710AA28E7B00D15D2E1A5, (String_t*)NULL, UQueryExtensions_Q_TisVisualElement_t2667F9D19E62C7A315927506C06F223AB9234115_m3BB51290583E624E529EC4115BEA56173DC48394_RuntimeMethod_var);
-		__this->____gameMenuVisualTree_37 = L_12;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameMenuVisualTree_37), (void*)L_12);
+		__this->____gameMenuVisualTree_38 = L_12;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____gameMenuVisualTree_38), (void*)L_12);
 		// _gameMenuVisualTree.style.display = DisplayStyle.None;
-		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_13 = __this->____gameMenuVisualTree_37;
+		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_13 = __this->____gameMenuVisualTree_38;
 		NullCheck(L_13);
 		RuntimeObject* L_14;
 		L_14 = VisualElement_get_style_mDCFF8D835BE0AFE412905E108F48B32A83734224(L_13, NULL);
@@ -3164,14 +3168,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_Update_m8768D8AF9A890DF170DFDE
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB48F09C160814161107DF69BAC92E648974A4EE8);
 		s_Il2CppMethodInitialized = true;
 	}
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
 		// if (_gameWon)
-		bool L_0 = __this->____gameWon_36;
+		bool L_0 = __this->____gameWon_37;
 		if (!L_0)
 		{
 			goto IL_0009;
@@ -3194,7 +3197,7 @@ IL_0009:
 	{
 		// HoldBall();
 		BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7E62768833C778F5684EB(__this, NULL);
-		goto IL_0022;
+		goto IL_003a;
 	}
 
 IL_0019:
@@ -3203,31 +3206,41 @@ IL_0019:
 		bool L_2 = __this->____thrown_22;
 		if (!L_2)
 		{
-			goto IL_0022;
+			goto IL_003a;
 		}
 	}
 	{
-		// return;
-		return;
+		// if (_timeSinceThrown - Time.time >= 5)
+		float L_3 = __this->____timeSinceThrown_24;
+		float L_4;
+		L_4 = Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3(NULL);
+		if ((!(((float)((float)il2cpp_codegen_subtract(L_3, L_4))) >= ((float)(5.0f)))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		// resetBall();
+		BallThrow_resetBall_m2B8D40065B635DA1624251559A0DA9796BEC0707(__this, NULL);
 	}
 
-IL_0022:
+IL_003a:
 	{
 		// if (_input.TouchHeld && BallTime == true)
-		InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* L_3 = __this->____input_4;
-		NullCheck(L_3);
-		bool L_4;
-		L_4 = InputHandler_get_TouchHeld_mF08250C2F2CF251889B4B09767DF0907B22E70F3_inline(L_3, NULL);
-		if (!L_4)
+		InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* L_5 = __this->____input_4;
+		NullCheck(L_5);
+		bool L_6;
+		L_6 = InputHandler_get_TouchHeld_mF08250C2F2CF251889B4B09767DF0907B22E70F3_inline(L_5, NULL);
+		if (!L_6)
 		{
-			goto IL_003e;
+			goto IL_0056;
 		}
 	}
 	{
-		bool L_5 = __this->___BallTime_33;
-		if (!L_5)
+		bool L_7 = __this->___BallTime_34;
+		if (!L_7)
 		{
-			goto IL_003e;
+			goto IL_0056;
 		}
 	}
 	{
@@ -3236,96 +3249,98 @@ IL_0022:
 		return;
 	}
 
-IL_003e:
+IL_0056:
 	{
 		// _holding = false;
 		__this->____holding_23 = (bool)0;
 		// _endTime = Time.time;
-		float L_6;
-		L_6 = Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3(NULL);
-		__this->____endTime_8 = L_6;
+		float L_8;
+		L_8 = Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3(NULL);
+		__this->____endTime_8 = L_8;
+		// _timeSinceThrown = Time.time;
+		float L_9;
+		L_9 = Time_get_time_m0BEE9AACD0723FE414465B77C9C64D12263675F3(NULL);
+		__this->____timeSinceThrown_24 = L_9;
 		// _endPos = _input.TouchCurrentPos;
-		InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* L_7 = __this->____input_4;
-		NullCheck(L_7);
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8;
-		L_8 = InputHandler_get_TouchCurrentPos_mBCDBA6316CCC98F3EE11883DB1CFB6D5A4D1340A_inline(L_7, NULL);
-		__this->____endPos_11 = L_8;
-		// _swipeDist = (_endPos - _startPos).magnitude;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9 = __this->____endPos_11;
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_10 = __this->____startPos_12;
+		InputHandler_tB7F76670D49DAB5D76D0D1193F3A30EF4AF86710* L_10 = __this->____input_4;
+		NullCheck(L_10);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_11;
-		L_11 = Vector2_op_Subtraction_m664419831773D5BBF06D9DE4E515F6409B2F92B8_inline(L_9, L_10, NULL);
-		V_0 = L_11;
-		float L_12;
-		L_12 = Vector2_get_magnitude_m5C59B4056420AEFDB291AD0914A3F675330A75CE_inline((&V_0), NULL);
-		__this->____swipeDist_9 = L_12;
+		L_11 = InputHandler_get_TouchCurrentPos_mBCDBA6316CCC98F3EE11883DB1CFB6D5A4D1340A_inline(L_10, NULL);
+		__this->____endPos_11 = L_11;
+		// _swipeDist = (_endPos - _startPos).magnitude;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_12 = __this->____endPos_11;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_13 = __this->____startPos_12;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_14;
+		L_14 = Vector2_op_Subtraction_m664419831773D5BBF06D9DE4E515F6409B2F92B8_inline(L_12, L_13, NULL);
+		V_0 = L_14;
+		float L_15;
+		L_15 = Vector2_get_magnitude_m5C59B4056420AEFDB291AD0914A3F675330A75CE_inline((&V_0), NULL);
+		__this->____swipeDist_9 = L_15;
 		// _swipeTime = _endTime - _startTime;
-		float L_13 = __this->____endTime_8;
-		float L_14 = __this->____startTime_7;
-		__this->____swipeTime_10 = ((float)il2cpp_codegen_subtract(L_13, L_14));
+		float L_16 = __this->____endTime_8;
+		float L_17 = __this->____startTime_7;
+		__this->____swipeTime_10 = ((float)il2cpp_codegen_subtract(L_16, L_17));
 		// if (_swipeTime < MaxSwipeTime && _swipeDist > MinSwipeDist)
-		float L_15 = __this->____swipeTime_10;
-		float L_16 = __this->___MaxSwipeTime_14;
-		if ((!(((float)L_15) < ((float)L_16))))
+		float L_18 = __this->____swipeTime_10;
+		float L_19 = __this->___MaxSwipeTime_14;
+		if ((!(((float)L_18) < ((float)L_19))))
 		{
-			goto IL_014c;
+			goto IL_015f;
 		}
 	}
 	{
-		float L_17 = __this->____swipeDist_9;
-		float L_18 = __this->___MinSwipeDist_13;
-		if ((!(((float)L_17) > ((float)L_18))))
+		float L_20 = __this->____swipeDist_9;
+		float L_21 = __this->___MinSwipeDist_13;
+		if ((!(((float)L_20) > ((float)L_21))))
 		{
-			goto IL_014c;
+			goto IL_015f;
 		}
 	}
 	{
-		// _ball.GetComponent<Rigidbody>().isKinematic= false;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19 = __this->____ball_5;
-		NullCheck(L_19);
-		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_20;
-		L_20 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_19, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		NullCheck(L_20);
-		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_20, (bool)0, NULL);
+		// _ball.GetComponent<Rigidbody>().isKinematic = false;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = __this->____ball_5;
+		NullCheck(L_22);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_23;
+		L_23 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_22, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		NullCheck(L_23);
+		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_23, (bool)0, NULL);
 		// ApplySpeed();
 		BallThrow_ApplySpeed_m69856679DE8928F4418C1D3F5D1D254893E5CB10(__this, NULL);
 		// ApplyAngle();
 		BallThrow_ApplyAngle_mB22F704B2A8C586D6C44669E34B80473151CFD85(__this, NULL);
-		// _ball.GetComponent<Rigidbody>().AddForce(new Vector3((_angle.x * _ballSpeed), (_angle.y * _ballSpeed ), (_angle.z * _ballSpeed)));
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = __this->____ball_5;
-		NullCheck(L_21);
-		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_22;
-		L_22 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_21, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_23 = (&__this->____angle_21);
-		float L_24 = L_23->___x_2;
-		float L_25 = __this->____ballSpeed_16;
+		// _ball.GetComponent<Rigidbody>().AddForce(new Vector3((_angle.x * _ballSpeed), (_angle.y * _ballSpeed), (_angle.z * _ballSpeed)));
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = __this->____ball_5;
+		NullCheck(L_24);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_25;
+		L_25 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_24, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_26 = (&__this->____angle_21);
-		float L_27 = L_26->___y_3;
+		float L_27 = L_26->___x_2;
 		float L_28 = __this->____ballSpeed_16;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_29 = (&__this->____angle_21);
-		float L_30 = L_29->___z_4;
+		float L_30 = L_29->___y_3;
 		float L_31 = __this->____ballSpeed_16;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_32;
-		memset((&L_32), 0, sizeof(L_32));
-		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_32), ((float)il2cpp_codegen_multiply(L_24, L_25)), ((float)il2cpp_codegen_multiply(L_27, L_28)), ((float)il2cpp_codegen_multiply(L_30, L_31)), /*hidden argument*/NULL);
-		NullCheck(L_22);
-		Rigidbody_AddForce_m7A3EEEED21F986917107CBA6CC0106DCBC212198(L_22, L_32, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_32 = (&__this->____angle_21);
+		float L_33 = L_32->___z_4;
+		float L_34 = __this->____ballSpeed_16;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_35;
+		memset((&L_35), 0, sizeof(L_35));
+		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_35), ((float)il2cpp_codegen_multiply(L_27, L_28)), ((float)il2cpp_codegen_multiply(L_30, L_31)), ((float)il2cpp_codegen_multiply(L_33, L_34)), /*hidden argument*/NULL);
+		NullCheck(L_25);
+		Rigidbody_AddForce_m7A3EEEED21F986917107CBA6CC0106DCBC212198(L_25, L_35, NULL);
 		// _ball.GetComponent<Rigidbody>().useGravity = true;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_33 = __this->____ball_5;
-		NullCheck(L_33);
-		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_34;
-		L_34 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_33, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		NullCheck(L_34);
-		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_34, (bool)1, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36 = __this->____ball_5;
+		NullCheck(L_36);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_37;
+		L_37 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_36, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		NullCheck(L_37);
+		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_37, (bool)1, NULL);
 		// _holding = false;
 		__this->____holding_23 = (bool)0;
 		// _thrown = true;
 		__this->____thrown_22 = (bool)1;
-		// Invoke("DefaultBall", 4f);
-		MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB(__this, _stringLiteralB48F09C160814161107DF69BAC92E648974A4EE8, (4.0f), NULL);
 	}
 
-IL_014c:
+IL_015f:
 	{
 		// }
 		return;
@@ -3374,7 +3389,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_DefaultBall_mA009A54DCE8C92069
 	bool V_0 = false;
 	{
 		// if (_gameWon)
-		bool L_0 = __this->____gameWon_36;
+		bool L_0 = __this->____gameWon_37;
 		if (!L_0)
 		{
 			goto IL_0009;
@@ -3393,45 +3408,45 @@ IL_0009:
 		L_2 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5(L_1, NULL);
 		String_t* L_3;
 		L_3 = String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D(_stringLiteral177C95994BA8FF1EFBD416DA002DAE5B663FDFD2, L_2, NULL);
-		__this->____debugMessage_35 = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____debugMessage_35), (void*)L_3);
-		// DebugText.text = _debugMessage;
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_4 = __this->___DebugText_34;
-		String_t* L_5 = __this->____debugMessage_35;
-		NullCheck(L_4);
-		VirtualActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_4, L_5);
-		// _ball.GetComponent<MeshRenderer>().enabled = true;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->____ball_5;
-		NullCheck(L_6);
-		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_7;
-		L_7 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_6, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
-		NullCheck(L_7);
-		Renderer_set_enabled_m015E6D7B825528A31182F267234CC6A925F71DA8(L_7, (bool)1, NULL);
-		// _ball.GetComponent<Collider>().enabled = true;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->____ball_5;
-		NullCheck(L_8);
-		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_9;
-		L_9 = GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597(L_8, GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597_RuntimeMethod_var);
-		NullCheck(L_9);
-		Collider_set_enabled_m8D5C3B5047592D227A52560FC9723D176E209F70(L_9, (bool)1, NULL);
-		// _ball.GetComponent<Rigidbody>().isKinematic = true;
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->____ball_5;
-		NullCheck(L_10);
-		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_11;
-		L_11 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_10, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
-		NullCheck(L_11);
-		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_11, (bool)1, NULL);
-		// BallTime = true;
-		__this->___BallTime_33 = (bool)1;
+		__this->____debugMessage_36 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____debugMessage_36), (void*)L_3);
 		// Tries++;
-		int32_t L_12 = __this->___Tries_6;
-		__this->___Tries_6 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+		int32_t L_4 = __this->___Tries_6;
+		__this->___Tries_6 = ((int32_t)il2cpp_codegen_add(L_4, 1));
+		// DebugText.text = _debugMessage;
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___DebugText_35;
+		String_t* L_6 = __this->____debugMessage_36;
+		NullCheck(L_5);
+		VirtualActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_5, L_6);
+		// _ball.GetComponent<MeshRenderer>().enabled = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->____ball_5;
+		NullCheck(L_7);
+		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_8;
+		L_8 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_7, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		NullCheck(L_8);
+		Renderer_set_enabled_m015E6D7B825528A31182F267234CC6A925F71DA8(L_8, (bool)1, NULL);
+		// _ball.GetComponent<Collider>().enabled = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->____ball_5;
+		NullCheck(L_9);
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_10;
+		L_10 = GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597(L_9, GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597_RuntimeMethod_var);
+		NullCheck(L_10);
+		Collider_set_enabled_m8D5C3B5047592D227A52560FC9723D176E209F70(L_10, (bool)1, NULL);
+		// _ball.GetComponent<Rigidbody>().isKinematic = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = __this->____ball_5;
+		NullCheck(L_11);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_12;
+		L_12 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_11, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		NullCheck(L_12);
+		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_12, (bool)1, NULL);
+		// BallTime = true;
+		__this->___BallTime_34 = (bool)1;
 		// _ball.transform.localPosition = _ogBallPos;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = __this->____ball_5;
 		NullCheck(L_13);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
 		L_14 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_13, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15 = __this->____ogBallPos_25;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15 = __this->____ogBallPos_26;
 		NullCheck(L_14);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_14, L_15, NULL);
 		// _angle = Vector3.zero;
@@ -3479,7 +3494,7 @@ IL_0009:
 		NullCheck(L_25);
 		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_25, (bool)0, NULL);
 		// _gameMenuVisualTree.style.display = DisplayStyle.Flex;
-		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_26 = __this->____gameMenuVisualTree_37;
+		VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* L_26 = __this->____gameMenuVisualTree_38;
 		NullCheck(L_26);
 		RuntimeObject* L_27;
 		L_27 = VisualElement_get_style_mDCFF8D835BE0AFE412905E108F48B32A83734224(L_26, NULL);
@@ -3511,7 +3526,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		NullCheck(L_3);
 		float L_4;
 		L_4 = Camera_get_nearClipPlane_m5E8FAF84326E3192CB036BD29DCCDAF6A9861013(L_3, NULL);
-		float L_5 = __this->___BallDist_26;
+		float L_5 = __this->___BallDist_27;
 		(&V_0)->___z_4 = ((float)il2cpp_codegen_multiply(L_4, L_5));
 		// _newPosition = Camera.main.ScreenToWorldPoint(_touchPos);
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_6;
@@ -3520,14 +3535,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		NullCheck(L_6);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8;
 		L_8 = Camera_ScreenToWorldPoint_m5EA3148F070985EC72127AAC3448D8D6ABE6E7E5(L_6, L_7, NULL);
-		__this->____newPosition_24 = L_8;
+		__this->____newPosition_25 = L_8;
 		// if (_touchPos.x < Screen.width * RightScreenLimit && _touchPos.x > Screen.width * LeftScreenLimit
 		// && _touchPos.y < Screen.height * TopScreenLimit && _touchPos.y > Screen.height * BottomScreenLimit)
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_9 = V_0;
 		float L_10 = L_9.___x_2;
 		int32_t L_11;
 		L_11 = Screen_get_width_mCA5D955A53CF6D29C8C7118D517D0FC84AE8056C(NULL);
-		float L_12 = __this->___RightScreenLimit_29;
+		float L_12 = __this->___RightScreenLimit_30;
 		if ((!(((float)L_10) < ((float)((float)il2cpp_codegen_multiply(((float)L_11), L_12))))))
 		{
 			goto IL_00c5;
@@ -3538,7 +3553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		float L_14 = L_13.___x_2;
 		int32_t L_15;
 		L_15 = Screen_get_width_mCA5D955A53CF6D29C8C7118D517D0FC84AE8056C(NULL);
-		float L_16 = __this->___LeftScreenLimit_30;
+		float L_16 = __this->___LeftScreenLimit_31;
 		if ((!(((float)L_14) > ((float)((float)il2cpp_codegen_multiply(((float)L_15), L_16))))))
 		{
 			goto IL_00c5;
@@ -3549,7 +3564,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		float L_18 = L_17.___y_3;
 		int32_t L_19;
 		L_19 = Screen_get_height_m624DD2D53F34087064E3B9D09AC2207DB4E86CA8(NULL);
-		float L_20 = __this->___TopScreenLimit_31;
+		float L_20 = __this->___TopScreenLimit_32;
 		if ((!(((float)L_18) < ((float)((float)il2cpp_codegen_multiply(((float)L_19), L_20))))))
 		{
 			goto IL_00c5;
@@ -3560,7 +3575,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		float L_22 = L_21.___y_3;
 		int32_t L_23;
 		L_23 = Screen_get_height_m624DD2D53F34087064E3B9D09AC2207DB4E86CA8(NULL);
-		float L_24 = __this->___BottomScreenLimit_32;
+		float L_24 = __this->___BottomScreenLimit_33;
 		if ((!(((float)L_22) > ((float)((float)il2cpp_codegen_multiply(((float)L_23), L_24))))))
 		{
 			goto IL_00c5;
@@ -3579,8 +3594,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_HoldBall_mA5C57CAF9E5FBA5C4AD7
 		NullCheck(L_28);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29;
 		L_29 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_28, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30 = __this->____newPosition_24;
-		float L_31 = __this->___DragSpeed_28;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30 = __this->____newPosition_25;
+		float L_31 = __this->___DragSpeed_29;
 		float L_32;
 		L_32 = Time_get_deltaTime_m7AB6BFA101D83E1D8F2EF3D5A128AEE9DDBF1A6D(NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_33;
@@ -3620,7 +3635,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_FindBall_mD4FC5896F69FEE5D71AE
 		Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 L_4;
 		L_4 = Camera_ScreenPointToRay_m2887B9A49880B7AB670C57D66B67D6A6689FE315(L_0, L_3, NULL);
 		// if (Physics.Raycast(_ballRay, out _hit, Reach))
-		float L_5 = __this->___Reach_27;
+		float L_5 = __this->___Reach_28;
 		bool L_6;
 		L_6 = Physics_Raycast_m9D43811EF26E70072B39A8CE10402EE074A61901(L_4, (&V_0), L_5, NULL);
 		if (!L_6)
@@ -3753,9 +3768,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_WinGame_m7CAD9263F0E1DB3DB8EE9
 	}
 	{
 		// _gameWon = true;
-		__this->____gameWon_36 = (bool)1;
+		__this->____gameWon_37 = (bool)1;
 		// BallTime = false; // Disable further interaction
-		__this->___BallTime_33 = (bool)0;
+		__this->___BallTime_34 = (bool)0;
 		// _ball.GetComponent<Rigidbody>().isKinematic = true;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->____ball_5;
 		NullCheck(L_0);
@@ -3773,13 +3788,105 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_WinGame_m7CAD9263F0E1DB3DB8EE9
 		NullCheck(L_3);
 		Rigidbody_set_velocity_mE4031DF1C2C1CCE889F2AC9D8871D83795BB0D62(L_3, L_4, NULL);
 		// _debugMessage = "You win!";
-		__this->____debugMessage_35 = _stringLiteralFF49DF2C64BC2B27F926CCC452079157FB5B6CB0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____debugMessage_35), (void*)_stringLiteralFF49DF2C64BC2B27F926CCC452079157FB5B6CB0);
+		__this->____debugMessage_36 = _stringLiteralFF49DF2C64BC2B27F926CCC452079157FB5B6CB0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____debugMessage_36), (void*)_stringLiteralFF49DF2C64BC2B27F926CCC452079157FB5B6CB0);
 		// DebugText.text = _debugMessage;
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___DebugText_34;
-		String_t* L_6 = __this->____debugMessage_35;
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_5 = __this->___DebugText_35;
+		String_t* L_6 = __this->____debugMessage_36;
 		NullCheck(L_5);
 		VirtualActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_5, L_6);
+		// }
+		return;
+	}
+}
+// System.Void BallThrow::resetBall()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow_resetBall_m2B8D40065B635DA1624251559A0DA9796BEC0707 (BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		// _ball.GetComponent<MeshRenderer>().enabled = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->____ball_5;
+		NullCheck(L_0);
+		MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* L_1;
+		L_1 = GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D(L_0, GameObject_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m7FF948365C38BC39333D82B235A7C4EAD219960D_RuntimeMethod_var);
+		NullCheck(L_1);
+		Renderer_set_enabled_m015E6D7B825528A31182F267234CC6A925F71DA8(L_1, (bool)1, NULL);
+		// _ball.GetComponent<Collider>().enabled = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->____ball_5;
+		NullCheck(L_2);
+		Collider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76* L_3;
+		L_3 = GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597(L_2, GameObject_GetComponent_TisCollider_t1CC3163924FCD6C4CC2E816373A929C1E3D55E76_m4CB0FC4E59CE6C91F1106739EF364208A63E2597_RuntimeMethod_var);
+		NullCheck(L_3);
+		Collider_set_enabled_m8D5C3B5047592D227A52560FC9723D176E209F70(L_3, (bool)1, NULL);
+		// _ball.GetComponent<Rigidbody>().isKinematic = true;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->____ball_5;
+		NullCheck(L_4);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_5;
+		L_5 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_4, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		NullCheck(L_5);
+		Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED(L_5, (bool)1, NULL);
+		// BallTime = true;
+		__this->___BallTime_34 = (bool)1;
+		// _ball.transform.localPosition = _ogBallPos;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->____ball_5;
+		NullCheck(L_6);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_7;
+		L_7 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_6, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8 = __this->____ogBallPos_26;
+		NullCheck(L_7);
+		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_7, L_8, NULL);
+		// _angle = Vector3.zero;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_9;
+		L_9 = Vector3_get_zero_m9D7F7B580B5A276411267E96AA3425736D9BDC83_inline(NULL);
+		__this->____angle_21 = L_9;
+		// _endPos = Vector2.zero;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_10;
+		L_10 = Vector2_get_zero_m009B92B5D35AB02BD1610C2E1ACCE7C9CF964A6E_inline(NULL);
+		__this->____endPos_11 = L_10;
+		// _startPos = Vector2.zero;
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_11;
+		L_11 = Vector2_get_zero_m009B92B5D35AB02BD1610C2E1ACCE7C9CF964A6E_inline(NULL);
+		__this->____startPos_12 = L_11;
+		// _ballSpeed = 0;
+		__this->____ballSpeed_16 = (0.0f);
+		// _startTime = 0;
+		__this->____startTime_7 = (0.0f);
+		// _endTime = 0;
+		__this->____endTime_8 = (0.0f);
+		// _swipeDist = 0;
+		__this->____swipeDist_9 = (0.0f);
+		// _swipeTime = 0;
+		__this->____swipeTime_10 = (0.0f);
+		// _thrown = _holding = false;
+		int32_t L_12 = 0;
+		V_0 = (bool)L_12;
+		__this->____holding_23 = (bool)L_12;
+		bool L_13 = V_0;
+		__this->____thrown_22 = L_13;
+		// _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->____ball_5;
+		NullCheck(L_14);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_15;
+		L_15 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_14, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
+		L_16 = Vector3_get_zero_m9D7F7B580B5A276411267E96AA3425736D9BDC83_inline(NULL);
+		NullCheck(L_15);
+		Rigidbody_set_velocity_mE4031DF1C2C1CCE889F2AC9D8871D83795BB0D62(L_15, L_16, NULL);
+		// _ball.GetComponent<Rigidbody>().useGravity = false;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = __this->____ball_5;
+		NullCheck(L_17);
+		Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* L_18;
+		L_18 = GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90(L_17, GameObject_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m2D7F86C77ECF9B82AAC077B511F1004280571B90_RuntimeMethod_var);
+		NullCheck(L_18);
+		Rigidbody_set_useGravity_m1B1B22E093F9DC92D7BEEBBE6B02642B3B6C4389(L_18, (bool)0, NULL);
 		// }
 		return;
 	}
@@ -3801,19 +3908,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BallThrow__ctor_mB558B500C72C33DF035A77A
 		// [SerializeField] float Distance_Amplifier = 2f;
 		__this->___Distance_Amplifier_20 = (2.0f);
 		// [SerializeField] float BallDist = 5;
-		__this->___BallDist_26 = (5.0f);
+		__this->___BallDist_27 = (5.0f);
 		// [SerializeField] float Reach = 20;
-		__this->___Reach_27 = (20.0f);
+		__this->___Reach_28 = (20.0f);
 		// [SerializeField] float DragSpeed = 80;
-		__this->___DragSpeed_28 = (80.0f);
+		__this->___DragSpeed_29 = (80.0f);
 		// private float RightScreenLimit = 0.91f;
-		__this->___RightScreenLimit_29 = (0.910000026f);
+		__this->___RightScreenLimit_30 = (0.910000026f);
 		// private float LeftScreenLimit = 0.09f;
-		__this->___LeftScreenLimit_30 = (0.0900000036f);
+		__this->___LeftScreenLimit_31 = (0.0900000036f);
 		// private float TopScreenLimit = 0.925f;
-		__this->___TopScreenLimit_31 = (0.925000012f);
+		__this->___TopScreenLimit_32 = (0.925000012f);
 		// private float BottomScreenLimit = 0.04f;
-		__this->___BottomScreenLimit_32 = (0.0399999991f);
+		__this->___BottomScreenLimit_33 = (0.0399999991f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}

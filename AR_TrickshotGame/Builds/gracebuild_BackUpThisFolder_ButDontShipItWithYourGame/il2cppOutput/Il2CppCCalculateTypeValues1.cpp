@@ -30475,34 +30475,36 @@ struct BallThrow_tBC07D1003ACA9F6EB024E09D36DD1DEF21E3F776  : public MonoBehavio
 	bool ____thrown_22;
 	// System.Boolean BallThrow::_holding
 	bool ____holding_23;
+	// System.Single BallThrow::_timeSinceThrown
+	float ____timeSinceThrown_24;
 	// UnityEngine.Vector3 BallThrow::_newPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_24;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____newPosition_25;
 	// UnityEngine.Vector3 BallThrow::_ogBallPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ____ogBallPos_26;
 	// System.Single BallThrow::BallDist
-	float ___BallDist_26;
+	float ___BallDist_27;
 	// System.Single BallThrow::Reach
-	float ___Reach_27;
+	float ___Reach_28;
 	// System.Single BallThrow::DragSpeed
-	float ___DragSpeed_28;
+	float ___DragSpeed_29;
 	// System.Single BallThrow::RightScreenLimit
-	float ___RightScreenLimit_29;
+	float ___RightScreenLimit_30;
 	// System.Single BallThrow::LeftScreenLimit
-	float ___LeftScreenLimit_30;
+	float ___LeftScreenLimit_31;
 	// System.Single BallThrow::TopScreenLimit
-	float ___TopScreenLimit_31;
+	float ___TopScreenLimit_32;
 	// System.Single BallThrow::BottomScreenLimit
-	float ___BottomScreenLimit_32;
+	float ___BottomScreenLimit_33;
 	// System.Boolean BallThrow::BallTime
-	bool ___BallTime_33;
+	bool ___BallTime_34;
 	// UnityEngine.UI.Text BallThrow::DebugText
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_34;
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___DebugText_35;
 	// System.String BallThrow::_debugMessage
-	String_t* ____debugMessage_35;
+	String_t* ____debugMessage_36;
 	// System.Boolean BallThrow::_gameWon
-	bool ____gameWon_36;
+	bool ____gameWon_37;
 	// UnityEngine.UIElements.VisualElement BallThrow::_gameMenuVisualTree
-	VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* ____gameMenuVisualTree_37;
+	VisualElement_t2667F9D19E62C7A315927506C06F223AB9234115* ____gameMenuVisualTree_38;
 };
 
 // UnityEngine.Experimental.XR.Interaction.BasePoseProvider
