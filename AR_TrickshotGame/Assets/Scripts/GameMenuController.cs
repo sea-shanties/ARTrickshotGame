@@ -12,7 +12,6 @@ public class GameMenuController : MonoBehaviour
     private VisualElement _pauseMenuVisualTree;
 
     private Button _pauseButton;
-    private Button _soundButton;
     private Button _backButton;
     private Toggle _soundToggle;
     private Button _quitButton;

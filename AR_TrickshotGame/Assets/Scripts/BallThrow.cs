@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BallThrow : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class BallThrow : MonoBehaviour
   [SerializeField] Text DebugText;
   private string _debugMessage;
 
+  private bool _gameWon = false;
+  private VisualElement _gameMenuVisualTree;
+
 
   // Start is called before the first frame update
   void Start()
@@ -56,12 +60,20 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
 
-    // DefaultBall();
-  }
+    VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+
+    _gameMenuVisualTree = root.Q<VisualElement>("GameplayMenuVisualTree");
+
+    _gameMenuVisualTree.style.display = DisplayStyle.None;
+
+        // DefaultBall();
+    }
 
   // Update is called once per frame
   void Update()
   {
+    if (_gameWon)
+      return;
     //checks if the screen is being touched
     if (_holding)
     {
@@ -125,6 +137,8 @@ public class BallThrow : MonoBehaviour
   // sets everything back to default for the new ball
   public void DefaultBall()
   {
+    if (_gameWon)
+      return;
     _debugMessage = "Tries: " + Tries;
     Tries++;
     DebugText.text = _debugMessage;
@@ -146,6 +160,7 @@ public class BallThrow : MonoBehaviour
     _thrown = _holding = false;
     _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
     _ball.GetComponent<Rigidbody>().useGravity = false;
+    _gameMenuVisualTree.style.display = DisplayStyle.Flex;
 
   }
 
@@ -206,6 +221,16 @@ public class BallThrow : MonoBehaviour
     _angle = Camera.main.ScreenToWorldPoint(new Vector3(_endPos.x, _endPos.y + Height_Amplifier, (Camera.main.nearClipPlane + Distance_Amplifier)));
   }
 
+  public void WinGame()
+  {
+    _gameWon = true;
+    BallTime = false; // Disable further interaction
+    _ball.GetComponent<Rigidbody>().isKinematic = true;
+    _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+    _debugMessage = "You win!";
+    DebugText.text = _debugMessage;
+  }
   private void resetBall () 
   {
     _ball.GetComponent<MeshRenderer>().enabled = true;
@@ -227,5 +252,4 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
     _ball.GetComponent<Rigidbody>().useGravity = false;
   }
-
 }
