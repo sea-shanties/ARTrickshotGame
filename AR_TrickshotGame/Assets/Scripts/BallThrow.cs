@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BallThrow : MonoBehaviour
 {
@@ -42,7 +43,9 @@ public class BallThrow : MonoBehaviour
   private float BottomScreenLimit = 0.04f;
   bool BallTime = false;
   [SerializeField] Text DebugText;
-  private string _debugMessage; 
+  private string _debugMessage;
+
+  private VisualElement _gameMenuVisualTree;
 
 
   // Start is called before the first frame update
@@ -54,9 +57,15 @@ public class BallThrow : MonoBehaviour
     _ball.GetComponent<MeshRenderer>().enabled = false;
     _ball.GetComponent<Collider>().enabled = false;
     _ball.GetComponent<Rigidbody>().isKinematic = true;
-   
-    // DefaultBall();
-  }
+
+    VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+
+    _gameMenuVisualTree = root.Q<VisualElement>("GameplayMenuVisualTree");
+
+    _gameMenuVisualTree.style.display = DisplayStyle.None;
+
+        // DefaultBall();
+    }
 
   // Update is called once per frame
   void Update()
@@ -139,6 +148,7 @@ public class BallThrow : MonoBehaviour
     _thrown = _holding = false;
     _ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
     _ball.GetComponent<Rigidbody>().useGravity = false;
+    _gameMenuVisualTree.style.display = DisplayStyle.Flex;
 
   }
 
